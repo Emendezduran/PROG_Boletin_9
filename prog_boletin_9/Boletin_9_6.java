@@ -11,18 +11,24 @@ public class Boletin_9_6 {
     
 public static void main(String[] args) {
 
-int contTrabajadores = 0;
-int contSueldo999 = 0;
-int contSueldo1750 = 0;
+        int contTrabajadores = 0;
+        int contSueldo999 = 0;
+        int contSueldo1750 = 0;
+        float sueldo = 0f;
 
-Scanner scan1 = new Scanner(System.in);
+        Scanner scan1 = new Scanner(System.in);
 
-System.out.println("Teclea el sueldo del trabajador" ++contTrabajadores);
+        System.out.println("Teclea el sueldo del trabajador" + ++contTrabajadores);
+        do {
+            sueldo = scan1.nextFloat();
 
-double sueldo = scan1.nextfloat;
-if(sueldo>=1000 && sueldo<=1750){
-++contSueldo1750;
-} else 
+            if (sueldo >= 1000f && sueldo <= 1750f) {
+                ++contSueldo1750;
+            } else if (sueldo < 1000f && sueldo > 0) {
+                ++contSueldo999;
+                System.out.println(contTrabajadores + contSueldo999 + contSueldo1750);
+            }
+        } while (sueldo < 0);
+    }
 
-}
 }
